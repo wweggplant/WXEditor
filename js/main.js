@@ -5,6 +5,8 @@
 	    jquery: 'jquery.min',
 	    ckeditor: 'ckeditor/ckeditor',
 	    ractive: 'ractive.min',
+	    mixitup:"jquery.mixitup.min",
+	    nicescroll:"jquery.nicescroll.min",
 	    spectrum: 'spectrum/spectrum',
 	}
   });

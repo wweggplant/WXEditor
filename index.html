@@ -12,9 +12,7 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
-         <link rel="stylesheet" href="js/vendor/spectrum/spectrum.css">
         <script src="js/vendor/modernizr.js"></script>
     </head>
     <body>
@@ -23,16 +21,30 @@
         <![endif]-->
             
         <!-- Add your site or application content here -->
-          <div id='container'>
+          <div class='container clearfix'>
                 <div class="" id="tabs">
                     <div class="top">
                         <input placeholder="Type your name" id="colorpicker" value="{{globalColor}}">
                         <input type="text" placeholder="输入微信公众号" id="mpName" value="">
                     </div>
-
-
+                    <div class="filter">
+                            <button>全部</button>
+                            <button>标题</button>
+                            <button>卡片</button>
+                            <button>段落</button>
+                            <button>分隔符</button>
+                            <button>顶与关注</button>
+                            <button>图文</button>
+                            <button>模板</button>
+                    </div>
+                    <div  class="sandbox">
+                        <section id="sandboxTitle"></section>
+                         <section id="sandboxParas"></section>
+                         <section id="sandboxFlollow"></section>
+                         <section id="sandboxHr"></section>
+                    </div>
                 </div>
-                <div id="editor">
+                <div id="editor" >
                   <textarea name="congee" id="congee" rows="10" cols="80">
                         This is my textarea to be replaced with CKEditor.
                     </textarea>
@@ -40,7 +52,7 @@
 
 
           </div>
-        <script data-main="js/main" src="js/vendor/require.min.js"></script>
+        <script data-main="js/main.js" src="js/vendor/require.min.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     </body>
 </html>

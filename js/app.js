@@ -1,4 +1,4 @@
-define(["ractive","ckeditor","ckeditor"],function () {
+define(["ractive","ckeditor"],function () {
   'use strict';
   var init = function () {
    CKEDITOR.editorConfig = function (config) {
