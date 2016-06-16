@@ -1,8 +1,7 @@
-define(["ractive","ckeditor"],function () {
+define(["jquery","ractive","ckeditor",'ckeditor'],function () {
   'use strict';
   var init = function () {
    CKEDITOR.editorConfig = function (config) {
-      config.allowedContent = true;
       config.language = 'zh-cn';
       //config.skin = 'minimalist';
       config.pasteFilter = null;
@@ -45,7 +44,17 @@ define(["ractive","ckeditor"],function () {
     var congee = CKEDITOR.replace('congee', {
       uiColor: '#fafafa'
     });
+    congee.on('change', function (evt) {
 
+    });
+    congee.on('instanceReady', function(event) {
+      $(".sandbox").on('click', '>section', function(event) {
+        var html  = $(this).html(); 
+      // congee.insertElement(CKEDITOR.dom.element.createFromHtml(html));
+        var template = $(event.currentTarget).html();
+        congee.insertHtml(template);
+      });
+    });
   };
   var colorPicker = function (changeCB) {
     $('#colorpicker').spectrum({

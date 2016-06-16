@@ -3,16 +3,23 @@
     waitSeconds: 15,
     paths: {
 	    jquery: 'jquery.min',
+	    text: 'text',
 	    ckeditor: 'ckeditor/ckeditor',
 	    ractive: 'ractive.min',
 	    mixitup:"jquery.mixitup.min",
 	    nicescroll:"jquery.nicescroll.min",
 	    spectrum: 'spectrum/spectrum',
+	    titleView:"../view/title"
 	}
   });
-require(['../app', 'ractive', 'jquery',"spectrum"],function (App, Ractive, $) {
-	'use strict';
-	App.init();
-	App.colorPicker();
-	Ractive.DEBUG = false;
-});
+require(['../app', 'ractive', 'titleView','jquery',"spectrum"],
+	function (App, Ractive,titleView, $) {
+		'use strict';
+		var config = {};
+		App.init(config);
+		var title = titleView.init(config);
+		App.colorPicker(function(color){
+			title.fire("changeColor",{color:color});
+		});
+		Ractive.DEBUG = false;
+	});

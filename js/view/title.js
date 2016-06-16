@@ -1,6 +1,26 @@
-define(["ractive",'text!templates/titles/list.html'],function(Ractive, titleTemplate){
-
-
-
-
+define(["ractive",'text!../../templates/titles/title.html'],function(Ractive, titleTemplate){
+	var app  = {
+		init:function(config){
+			var Grid = Ractive.extend({
+				template:titleTemplate,
+			});
+			var color = config.defaultColor||"green";
+			var Title = Ractive({
+				el:"sandboxTitle",
+				template:'<Grid Style="{{styles}}" />',
+				components:{Grid: Grid},
+				data:{
+					styles:[
+						{color:color}
+					]
+				}
+			});
+			console.log(Title);
+			Title.on('changeColor', function(args) {
+				Title.findComponent("Grid").set("Style.*.color",args.color);
+			});
+			return Title;
+		}
+	}
+	return app;
 });
