@@ -27,21 +27,21 @@
                         <input placeholder="Type your name" id="colorpicker" value="{{globalColor}}">
                         <input type="text" placeholder="输入微信公众号" id="mpName" value="">
                     </div>
-                    <div class="filter">
-                            <button>全部</button>
-                            <button>标题</button>
-                            <button>卡片</button>
-                            <button>段落</button>
-                            <button>分隔符</button>
-                            <button>顶与关注</button>
-                            <button>图文</button>
-                            <button>模板</button>
+                    <div id="filter-tool" class="filter-tool">
+                            <button class="filter" data-filter="all">全部</button>
+                            <button class="filter" data-filter=".title">标题</button>
+                            <button class="filter" >卡片</button>
+                            <button class="filter" data-filter=".paras">段落</button>
+                            <button class="filter" data-filter=".separator">分隔符</button>
+                            <button class="filter" >顶与关注</button>
+                            <button class="filter" >图文</button>
+                            <button class="filter" >模板</button>
                     </div>
                     <div  class="sandbox">
                          <section id="sandboxTitle"></section>
                          <section id="sandboxParas"></section>
-                         <section id="sandboxFlollow"></section>
                          <section id="sandboxHr"></section>
+                         <section id="sandboxFlollow"></section>
                     </div>
                 </div>
                 <div id="editor" >

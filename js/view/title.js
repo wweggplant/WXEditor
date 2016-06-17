@@ -1,4 +1,4 @@
-define(["ractive",'text!../../templates/titles/title.html'],function(Ractive, titleTemplate){
+define(["ractive",'text!../../templates/titles/tpl.html'],function(Ractive, titleTemplate){
 	var app  = {
 		init:function(config){
 			var Grid = Ractive.extend({

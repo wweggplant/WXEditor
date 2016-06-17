@@ -58,11 +58,20 @@ input[type="button"]{
 #tabs{
 	float: left;
 	width: 40%;
-	.filter{
+	.filter-tool{
 		button{
 			padding: 0 15px;
 		}
-		
+		.filter{
+			&.active{
+				color:#ffffff;
+				background-color:blue;
+			}
+		}
+	}
+	.mix{
+		display:none;
+
 	}
 }
 #editor{
@@ -72,7 +81,7 @@ input[type="button"]{
 
 //模板的沙盒
 .sandbox{
-	min-height: 600px;
+	height: 600px;
 	position: relative;
 	border:1px solid #ffffff;
 }

@@ -1,7 +1,7 @@
-define(["jquery","ractive","ckeditor",'ckeditor'],function () {
+define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
   'use strict';
   var init = function () {
-   CKEDITOR.editorConfig = function (config) {
+   /*CKEDITOR.editorConfig = function (config) {
       config.language = 'zh-cn';
       //config.skin = 'minimalist';
       config.pasteFilter = null;
@@ -40,7 +40,40 @@ define(["jquery","ractive","ckeditor",'ckeditor'],function () {
         {name: 'colors', items: ['TextColor', 'BGColor']},
         {name: 'tools', items: ['Maximize', 'ShowBlocks', 'Source']}
       ];
-    };
+    };*/
+    CKEDITOR.editorConfig = function( config ) {
+  // Define changes to default configuration here.
+  // For complete reference see:
+  // http://docs.ckeditor.com/#!/api/CKEDITOR.config
+  config.allowedContent = true;
+  config.height = 637;
+  // The toolbar groups arrangement, optimized for two toolbar rows.
+  config.toolbarGroups = [
+    { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+    { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+    { name: 'links' },
+    { name: 'insert' },
+    { name: 'forms' },
+    { name: 'tools' },
+    { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
+    { name: 'others' },
+    '/',
+    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+    { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+    { name: 'styles' },
+    { name: 'colors' },
+    { name: 'about' }
+  ];
+  // Remove some buttons provided by the standard plugins, which are
+  // not needed in the Standard(s) toolbar.
+  config.removeButtons = 'Underline,Subscript,Superscript';
+
+  // Set the most common block elements.
+  config.format_tags = 'p;h1;h2;h3;pre';
+
+  // Simplify the dialog windows.
+  config.removeDialogTabs = 'image:advanced;link:advanced';
+};
     var congee = CKEDITOR.replace('congee', {
       uiColor: '#fafafa'
     });
@@ -56,6 +89,11 @@ define(["jquery","ractive","ckeditor",'ckeditor'],function () {
       });
     });
   };
+
+
+
+ 
+  
   var colorPicker = function (changeCB) {
     $('#colorpicker').spectrum({
       showPaletteOnly: true,
