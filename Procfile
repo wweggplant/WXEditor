@@ -1,1 +1,1 @@
-web: php 
+web: vendor/bin/WXEditor web/
