@@ -1,1 +1,1 @@
-web: vendor/bin/WXEditor web/
+web: WXEditor/
