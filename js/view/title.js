@@ -11,7 +11,7 @@ define(["ractive",'text!../../templates/titles/tpl.html'],function(Ractive, titl
 				components:{Grid: Grid},
 				data:{
 					styles:[
-						{color:color}
+						{color:color,fontSize:18}
 					]
 				}
 			});

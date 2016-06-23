@@ -1,7 +1,7 @@
 define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
   'use strict';
   var init = function () {
-   /*CKEDITOR.editorConfig = function (config) {
+   CKEDITOR.editorConfig = function (config) {
       config.language = 'zh-cn';
       //config.skin = 'minimalist';
       config.pasteFilter = null;
@@ -9,8 +9,8 @@ define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
       config.allowedContent = true;
       config.pasteFromWordRemoveFontStyles = false;
       config.pasteFromWordRemoveStyles = false;
-      config.extraPlugins = 'floating-tools,notification,autosave,templates,wordcount,' +
-        'clipboard,pastefromword,smiley,dialog,music,preview,selectall,clearall';
+      config.extraPlugins = 'autosave,notification,floating-tools,wordcount,' +
+        'clipboard,pastefromword,smiley,dialog,preview,selectall';
       config.height = 637;
       config.enterMode = CKEDITOR.ENTER_DIV;
 
@@ -23,7 +23,7 @@ define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
       };
 
       config.toolbar = [
-        {name: 'document', items: ['Music', 'Copy', 'SelectAll', 'ClearAll', 'Preview']},
+        {name: 'document', items: [ 'Copy', 'SelectAll', 'Preview']},
         {name: 'super', items: ['Smiley', 'RemoveFormat']},
         {
           name: 'basicstyles',
@@ -38,42 +38,63 @@ define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
         {name: 'clipboard', items: ['Undo', 'Redo']},
         {name: 'styles', items: ['Format', 'Font', 'FontSize']},
         {name: 'colors', items: ['TextColor', 'BGColor']},
-        {name: 'tools', items: ['Maximize', 'ShowBlocks', 'Source']}
+        {name: 'tools', items: ['Maximize', 'ShowBlocks', 'Source',"about"]}
       ];
-    };*/
-    CKEDITOR.editorConfig = function( config ) {
-  // Define changes to default configuration here.
-  // For complete reference see:
-  // http://docs.ckeditor.com/#!/api/CKEDITOR.config
-  config.allowedContent = true;
-  config.height = 637;
-  // The toolbar groups arrangement, optimized for two toolbar rows.
-  config.toolbarGroups = [
-    { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-    { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-    { name: 'links' },
-    { name: 'insert' },
-    { name: 'forms' },
-    { name: 'tools' },
-    { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
-    { name: 'others' },
-    '/',
-    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-    { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-    { name: 'styles' },
-    { name: 'colors' },
-    { name: 'about' }
-  ];
-  // Remove some buttons provided by the standard plugins, which are
-  // not needed in the Standard(s) toolbar.
-  config.removeButtons = 'Underline,Subscript,Superscript';
+    };
+//     CKEDITOR.editorConfig = function( config ) {
+//   // Define changes to default configuration here.
+//   // For complete reference see:
+//   // http://docs.ckeditor.com/#!/api/CKEDITOR.config
+//       config.language = 'zh-cn';
+//       //config.skin = 'minimalist';
+//       config.pasteFilter = null;
+//       config.forcePasteAsPlainText = false;
+//       config.allowedContent = true;
+//       config.pasteFromWordRemoveFontStyles = false;
+//       config.pasteFromWordRemoveStyles = false;
+//       config.extraPlugins = 'floating-tools,notification,autosave,templates,wordcount,' +
+//         'clipboard,pastefromword,smiley,dialog,preview,selectall';
+//       config.height = 637;
+//       config.enterMode = CKEDITOR.ENTER_DIV;
 
-  // Set the most common block elements.
-  config.format_tags = 'p;h1;h2;h3;pre';
+//       config.wordcount = {
+//         showParagraphs: true,
+//         showWordCount: true,
+//         showCharCount: true,
+//         countSpacesAsChars: true,
+//         countHTML: true
+//       };
+//   config.allowedContent = true;
+//   config.height = 637;
+//   // The toolbar groups arrangement, optimized for two toolbar rows.
+//   config.toolbar = [
+//         {name: 'document', items: ['Copy', 'SelectAll', 'ClearAll', 'Preview']},
+//         {name: 'super', items: ['Smiley', 'RemoveFormat']},
+//         {
+//           name: 'basicstyles',
+//           items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', 'CreateDiv']
+//         },
+//         {
+//           name: 'paragraph',
+//           items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote',
+//             '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+//         },
+//         '/',
+//         {name: 'clipboard', items: ['Undo', 'Redo']},
+//         {name: 'styles', items: ['Format', 'Font', 'FontSize']},
+//         {name: 'colors', items: ['TextColor', 'BGColor']},
+//         {name: 'tools', items: ['Maximize', 'ShowBlocks', 'Source']}
+//       ];
+//   // Remove some buttons provided by the standard plugins, which are
+//   // not needed in the Standard(s) toolbar.
+//   config.removeButtons = 'Underline,Subscript,Superscript';
 
-  // Simplify the dialog windows.
-  config.removeDialogTabs = 'image:advanced;link:advanced';
-};
+//   // Set the most common block elements.
+//   config.format_tags = 'p;h1;h2;h3;pre';
+
+//   // Simplify the dialog windows.
+//   config.removeDialogTabs = 'image:advanced;link:advanced';
+// };
     var congee = CKEDITOR.replace('congee', {
       uiColor: '#fafafa'
     });
