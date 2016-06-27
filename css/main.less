@@ -57,7 +57,7 @@ input[type="button"]{
 }
 #tabs{
 	float: left;
-	width: 40%;
+	width: 60%;
 	.filter-tool{
 		float:left;
 		width:100px;
@@ -75,13 +75,16 @@ input[type="button"]{
 		}
 	}
 	.mix{
+		cursor:pointer;
 		display:none;
-
+		&:hover{
+			border:1px solid green;
+		}
 	}
 }
 #editor{
 	float:left;
-	width:60%;
+	width:40%;
 }
 
 //模板的沙盒
