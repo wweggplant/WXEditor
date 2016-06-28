@@ -10,7 +10,7 @@ define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
       config.pasteFromWordRemoveFontStyles = false;
       config.pasteFromWordRemoveStyles = false;
       config.extraPlugins = 'autosave,notification,floating-tools,wordcount,' +
-        'clipboard,pastefromword,smiley,dialog,preview,selectall';
+        'clipboard,pastefromword,smiley,dialog,preview,selectall,clearall';
       config.height = 637;
       config.enterMode = CKEDITOR.ENTER_DIV;
 
@@ -23,7 +23,7 @@ define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
       };
 
       config.toolbar = [
-        {name: 'document', items: [ 'Copy', 'SelectAll', 'Preview']},
+        {name: 'document', items: [ 'Copy', 'SelectAll', 'Preview',"ClearAll"]},
         {name: 'super', items: ['Smiley', 'RemoveFormat']},
         {
           name: 'basicstyles',

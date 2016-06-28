@@ -15,6 +15,7 @@
 	    followView:"../view/follow",
 	    cardView:"../view/card",
 	    articleView:"../view/article",
+	    app:"../app"
 	},
 	shim:{
 		mixitup:{
@@ -25,7 +26,7 @@
 		},
 	}
   });
-require(['../app', 'ractive', 'titleView','paraView','hrView','cardView','followView','articleView','jquery',"mixitup","nicescroll","spectrum"],
+require(['app', 'ractive', 'titleView','paraView','hrView','cardView','followView','articleView','jquery',"mixitup","nicescroll","spectrum"],
 	function (App, Ractive,titleView,paraView,hrView,cardView,followView,articleView, $) {
 		'use strict';
 		var config = {};
@@ -43,6 +44,7 @@ require(['../app', 'ractive', 'titleView','paraView','hrView','cardView','follow
 			card.fire("changeColor",{color:color});
 			follow.fire("changeColor",{color:color});
 			article.fire("changeColor",{color:color});
+			$('#colorpicker').spectrum("toggle");
 		});
 		$('#tabs').mixItUp();
 		$(".sandbox").niceScroll({
