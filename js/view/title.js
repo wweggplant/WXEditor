@@ -10,6 +10,7 @@ define(["ractive",'text!../../templates/titles/tpl.html'],function(Ractive, titl
 				template:'<Grid Style="{{styles}}" />',
 				components:{Grid: Grid},
 				data:{
+					wxName:"标题",
 					styles:[
 						{color:color,fontSize:18}
 					]
@@ -18,6 +19,10 @@ define(["ractive",'text!../../templates/titles/tpl.html'],function(Ractive, titl
 			console.log(Title);
 			Title.on('changeColor', function(args) {
 				Title.findComponent("Grid").set("Style.*.color",args.color);
+			});
+			Title.on('changeName', function(args) {
+				// alert(args.name)
+				Title.findComponent("Grid").set("wxName",args.wxName);
 			});
 			return Title;
 		}

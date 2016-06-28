@@ -26,7 +26,7 @@
 		},
 	}
   });
-require(['app', 'ractive', 'titleView','paraView','hrView','cardView','followView','articleView','jquery',"mixitup","nicescroll","spectrum"],
+require(['app', 'ractive', 'titleView','paraView','hrView','cardView','followView','articleView','jquery'],
 	function (App, Ractive,titleView,paraView,hrView,cardView,followView,articleView, $) {
 		'use strict';
 		var config = {};
@@ -46,6 +46,9 @@ require(['app', 'ractive', 'titleView','paraView','hrView','cardView','followVie
 			article.fire("changeColor",{color:color});
 			$('#colorpicker').spectrum("toggle");
 		});
+		$("#mpName").on('change input', function(event) {
+	       title.fire("changeName",{wxName:this.value});
+	    });
 		$('#tabs').mixItUp();
 		$(".sandbox").niceScroll({
 	        cursorcolor: "#ccc",//#CC0071 光标颜色 

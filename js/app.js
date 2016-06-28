@@ -1,4 +1,4 @@
-define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
+define(["jquery","ractive","ckeditor","spectrum","mixitup","nicescroll"],function () {
   'use strict';
   var init = function () {
    CKEDITOR.editorConfig = function (config) {
@@ -41,21 +41,21 @@ define(["jquery","ractive","ckeditor","mixitup","nicescroll"],function () {
         {name: 'tools', items: ['Maximize', 'ShowBlocks', 'Source',"about"]}
       ];
     };
-    var congee = CKEDITOR.replace('congee', {
+    var editor = CKEDITOR.replace('editor', {
       uiColor: '#fafafa'
     });
-    congee.on('change', function (evt) {
+    editor.on('change', function (evt) {
 
     });
-    congee.on('instanceReady', function(event) {
+    editor.on('instanceReady', function(event) {
       $(".sandbox").on('click', '.mix', function(event) {
-        var html  = $(this).html(); 
-      // congee.insertElement(CKEDITOR.dom.element.createFromHtml(html));
-        var template = $(event.currentTarget).html();
-        congee.insertHtml(template);
+        editor.insertHtml($(event.currentTarget).html());
       });
     });
+
+    
   };
+
 
 
 
