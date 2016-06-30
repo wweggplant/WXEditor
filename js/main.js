@@ -59,5 +59,6 @@ require(['app', 'ractive', 'titleView','paraView','hrView','cardView','followVie
 		    cursorborderradius: "5px",//以像素为光标边界半径 
 		    autohidemode: false //是否隐藏滚动条 
 		});
+		Ps.done();
 		Ractive.DEBUG = false;
 	});

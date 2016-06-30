@@ -13,7 +13,11 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="css/main.css">
+        <style type="text/css" media="screen">
+            
+        </style>
         <script src="js/vendor/modernizr.js"></script>
+        <script src="js/vendor/progressByRandom.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -22,6 +26,9 @@
             
         <!-- Add your site or application content here -->
           <div class='container clearfix'>
+                <div class="progress">  
+                    <div class="progress-inner" id="progress"></div>
+                </div>
                 <div class="" id="tabs">
                     <div class="top">
                         <input placeholder="Type your name" id="colorpicker" value="{{globalColor}}">
@@ -52,6 +59,10 @@
                     </textarea>
                 </div>
           </div>
+          <script>
+            var Ps = new Progress("#progress",{end:"man"})
+            Ps.start();     
+          </script>
         <script src="js/vendor/ckeditor/plugins/autosave/js/moment.js"></script>
         <script data-main="js/main.js" src="js/vendor/require.min.js"></script>
     </body>
