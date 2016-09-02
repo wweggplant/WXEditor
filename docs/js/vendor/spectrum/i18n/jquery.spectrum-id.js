@@ -1,0 +1,1 @@
+!function(e){var t=e.spectrum.localization.id={cancelText:"Batal",chooseText:"Pilih",clearText:"Hapus Pilihan Warna",noColorSelectedText:"Warna Tidak Dipilih",togglePaletteMoreText:"tambah",togglePaletteLessText:"kurangi"};e.extend(e.fn.spectrum.defaults,t)}(jQuery);

@@ -1,0 +1,1 @@
+CKEDITOR.plugins.add("clearall",{require:"notification",icons:"clearall",init:function(a){a.addCommand("clearall",{modes:{wysiwyg:1,source:1},exec:function(a){a.setData("")},canUndo:!1}),a.ui.addButton&&a.ui.addButton("ClearAll",{label:"清空文档",command:"clearall",toolbar:"insert,50"})}});

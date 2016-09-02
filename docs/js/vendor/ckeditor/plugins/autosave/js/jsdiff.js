@@ -1,0 +1,14 @@
+/*
+ * Javascript Diff Algorithm
+ *  By John Resig (http://ejohn.org/)
+ *  Modified by Chu Alan "sprite"
+ *  diffstring2 random colors removed by Richard Bondi for use with jsdifflib
+ *
+ * Released under the MIT license.
+ *
+ * More Info:
+ *  http://ejohn.org/projects/javascript-diff-algorithm/
+ *
+ */
+
+function escape_jsdiff(e){var r=e;return r=r.replace(/&/g,"&amp;"),r=r.replace(/</g,"&lt;"),r=r.replace(/>/g,"&gt;"),r=r.replace(/"/g,"&quot;")}function diffString(e,r){e=e.replace(/\s+$/,""),r=r.replace(/\s+$/,"");var n=diff(""==e?[]:e.split(/\s+/),""==r?[]:r.split(/\s+/)),t="",l=e.match(/\s+/g);null==l?l=["\n"]:l.push("\n");var o=r.match(/\s+/g);if(null==o?o=["\n"]:o.push("\n"),0==n.n.length)for(var s=0;s<n.o.length;s++)t+="<del>"+escape_jsdiff(n.o[s])+l[s]+"</del>";else{if(null==n.n[0].text)for(r=0;r<n.o.length&&null==n.o[r].text;r++)t+="<del>"+escape_jsdiff(n.o[r])+l[r]+"</del>";for(var s=0;s<n.n.length;s++)if(null==n.n[s].text)t+="<ins>"+escape_jsdiff(n.n[s])+o[s]+"</ins>";else{var f="";for(r=n.n[s].row+1;r<n.o.length&&null==n.o[r].text;r++)f+="<del>"+escape_jsdiff(n.o[r])+l[r]+"</del>";t+=" "+n.n[s].text+o[s]+f}}return t}function randomColor(){return"rgb("+100*Math.random()+"%, "+100*Math.random()+"%, "+100*Math.random()+"%)"}function diffString2(e,r){e=e.replace(/\s+$/,""),r=r.replace(/\s+$/,"");var n=diff(""==e?[]:e.split(/\s+/),""==r?[]:r.split(/\s+/)),t=e.match(/\s+/g);null==t?t=["\n"]:t.push("\n");var l=r.match(/\s+/g);null==l?l=["\n"]:l.push("\n");for(var o="",s=new Array,f=0;f<n.o.length;f++)s[f]=randomColor(),o+=null!=n.o[f].text?escape_jsdiff(n.o[f].text)+t[f]:"<del>"+escape_jsdiff(n.o[f])+t[f]+"</del>";for(var a="",f=0;f<n.n.length;f++)a+=null!=n.n[f].text?escape_jsdiff(n.n[f].text)+l[f]:"<ins>"+escape_jsdiff(n.n[f])+l[f]+"</ins>";return{o:o,n:a}}function diff(e,r){for(var n=new Object,t=new Object,l=0;l<r.length;l++)null==n[r[l]]&&(n[r[l]]={rows:new Array,o:null}),n[r[l]].rows.push(l);for(var l=0;l<e.length;l++)null==t[e[l]]&&(t[e[l]]={rows:new Array,n:null}),t[e[l]].rows.push(l);for(var l in n)1==n[l].rows.length&&"undefined"!=typeof t[l]&&1==t[l].rows.length&&(r[n[l].rows[0]]={text:r[n[l].rows[0]],row:t[l].rows[0]},e[t[l].rows[0]]={text:e[t[l].rows[0]],row:n[l].rows[0]});for(var l=0;l<r.length-1;l++)null!=r[l].text&&null==r[l+1].text&&r[l].row+1<e.length&&null==e[r[l].row+1].text&&r[l+1]==e[r[l].row+1]&&(r[l+1]={text:r[l+1],row:r[l].row+1},e[r[l].row+1]={text:e[r[l].row+1],row:l+1});for(var l=r.length-1;l>0;l--)null!=r[l].text&&null==r[l-1].text&&r[l].row>0&&null==e[r[l].row-1].text&&r[l-1]==e[r[l].row-1]&&(r[l-1]={text:r[l-1],row:r[l].row-1},e[r[l].row-1]={text:e[r[l].row-1],row:l-1});return{o:e,n:r}}

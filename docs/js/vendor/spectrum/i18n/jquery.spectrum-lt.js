@@ -1,0 +1,1 @@
+!function(e){var t=e.spectrum.localization.lt={cancelText:"Atšaukti",chooseText:"Pasirinkti",clearText:"Išvalyti pasirinkimą",noColorSelectedText:"Spalva nepasirinkta",togglePaletteMoreText:"Daugiau",togglePaletteLessText:"Mažiau"};e.extend(e.fn.spectrum.defaults,t)}(jQuery);

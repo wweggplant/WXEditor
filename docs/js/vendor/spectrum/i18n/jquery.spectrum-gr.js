@@ -1,0 +1,1 @@
+!function(e){var t=e.spectrum.localization.gr={cancelText:"Ακύρωση",chooseText:"Επιλογή",clearText:"Καθαρισμός επιλεγμένου χρώματος",noColorSelectedText:"Δεν έχει επιλεχθεί κάποιο χρώμα",togglePaletteMoreText:"Περισσότερα",togglePaletteLessText:"Λιγότερα"};e.extend(e.gr.spectrum.defaults,t)}(jQuery);

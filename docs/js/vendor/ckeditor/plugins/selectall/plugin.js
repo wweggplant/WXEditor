@@ -1,0 +1,6 @@
+/**
+ * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or http://ckeditor.com/license
+ */
+
+!function(){CKEDITOR.plugins.add("selectall",{lang:"af,ar,bg,bn,bs,ca,cs,cy,da,de,el,en,en-au,en-ca,en-gb,eo,es,et,eu,fa,fi,fo,fr,fr-ca,gl,gu,he,hi,hr,hu,id,is,it,ja,ka,km,ko,ku,lt,lv,mk,mn,ms,nb,nl,no,pl,pt,pt-br,ro,ru,si,sk,sl,sq,sr,sr-latn,sv,th,tr,tt,ug,uk,vi,zh,zh-cn",icons:"selectall",hidpi:!0,init:function(e){e.addCommand("selectAll",{modes:{wysiwyg:1,source:1},exec:function(e){var l=e.editable();if(l.is("textarea")){var t=l.$;CKEDITOR.env.ie?t.createTextRange().execCommand("SelectAll"):(t.selectionStart=0,t.selectionEnd=t.value.length),t.focus()}else{if(l.is("body"))e.document.$.execCommand("SelectAll",!1,null);else{var n=e.createRange();n.selectNodeContents(l),n.select()}e.forceNextSelectionCheck(),e.selectionChange()}},canUndo:!1}),e.ui.addButton&&e.ui.addButton("SelectAll",{label:e.lang.selectall.toolbar,command:"selectAll",toolbar:"selection,10"})}})}();
