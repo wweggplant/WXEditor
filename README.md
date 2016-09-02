@@ -1,4 +1,4 @@
-# [微信公众号编辑器](http://html5boilerplate.com)
+# [微信公众号编辑器](https://wweggplant.github.io/WXEditor/)
 
 使用了模块化的开发，可以方便的对公众号内容进行编辑
 
